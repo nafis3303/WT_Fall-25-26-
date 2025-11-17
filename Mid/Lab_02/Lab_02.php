@@ -20,6 +20,67 @@
         color: #444;
         margin-bottom: 15px;  
     }
+      form {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .success-message {
+        background-color: #d4edda;
+        color: #155724;
+        padding: 10px;
+        border-radius: 4px;
+        margin-top: 15px;
+        display: none;
+    }
+
+    .course-list {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 15px;
+    }
+
+    .course-list li {
+        background-color: #f8f9fa;
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        border-left: 4px solid #007bff;
+    }
 
 
 </style>
@@ -55,9 +116,6 @@
 
 </body>
 <script>
-    function registerStudent() {
-
-        
-    }
+   
 </script>
 </html>
