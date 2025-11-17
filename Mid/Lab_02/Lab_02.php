@@ -15,12 +15,19 @@
         <input type="password"><br><br>
         Confirm Password: <br>
         <input type="password"><br><br>
+
+        <button type="button">Register</button>
     </form>
+    <form>
 
     <div class="success"></div>
 
     <h2>Course Registration</h2>
     Course Name:<br>
-    <input type="checkbox"> Data Structures<br>
+    <input type="text" name="course"><br>
+    <button type="button">Add Course</button>
+
+    </form>
 
 </body>
+</html>
