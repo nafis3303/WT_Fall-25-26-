@@ -23,3 +23,18 @@ if($total >= 240) {
 } else {
     $grade = "C";
 }
+
+switch($dept) {
+    case "CSE":
+        $department = "CSE";
+        break;
+    case "EEE":
+        $department = "EEE";
+        break;
+    case "BBA":
+        $department = "BBA";
+        break;
+    default:
+        $department = "Unknown";
+        break;
+}
