@@ -50,15 +50,12 @@ class Student{
 
 }
 $s=new Student();
-$s->name="Nafis";
+$s->set_name("Nafis");
 
 echo "<h3>Student Report</h3>";
 echo "Name: " . $s->get_name() . "<br>";
 echo "Age: $age <br>";
 echo "Department: $dept <br>";
-echo "Department Info: $message <br><br>";
-echo "Student ID: " . $info["id"] . "<br>";
-echo "Semester: " . $info["semester"] . "<br><br>";
 echo "Marks: <br>";
 foreach($marks as $m){
     echo $m . "<br>";
