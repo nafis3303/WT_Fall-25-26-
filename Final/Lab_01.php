@@ -38,3 +38,17 @@ switch($dept) {
         $department = "Unknown";
         break;
 }
+
+class Student{
+    public $studentName;
+    function set name($n) {
+        $this->studentName = $n;
+    }
+    function get name() {
+        return $this->studentName;
+    }
+
+}
+$s=new Student();
+$s->name="Nafis";
+echo $s->name;
