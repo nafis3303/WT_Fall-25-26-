@@ -41,14 +41,29 @@ switch($dept) {
 
 class Student{
     public $studentName;
-    function set name($n) {
+    function set_name($n) {
         $this->studentName = $n;
     }
-    function get name() {
+    function get_name() {
         return $this->studentName;
     }
 
 }
 $s=new Student();
 $s->name="Nafis";
-echo $s->name;
+
+echo "<h3>Student Report</h3>";
+echo "Name: " . $s->get_name() . "<br>";
+echo "Age: $age <br>";
+echo "Department: $dept <br>";
+echo "Department Info: $message <br><br>";
+echo "Student ID: " . $info["id"] . "<br>";
+echo "Semester: " . $info["semester"] . "<br><br>";
+echo "Marks: <br>";
+foreach($marks as $m){
+    echo $m . "<br>";
+}
+echo "<br>Total Marks: $total <br>";
+echo "Grade: $grade <br>";
+?>
+
