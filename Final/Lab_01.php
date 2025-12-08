@@ -13,3 +13,13 @@ function totalMarks($arr) {
     return $sum;
 }
 $total = totalMarks($marks);
+
+if($total >= 240) {
+    $grade = "A+";
+} elseif($total >= 210) {
+    $grade = "A";
+} elseif($total >= 180) {
+    $grade = "B";
+} else {
+    $grade = "C";
+}
