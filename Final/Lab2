@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LAB 4.2</title>
+    </head>
+    <body>
+        <h1>ASSIGNMENT</h1>
+        
+        <?php
+        $name = "";
+        $nameerror = "";
+        $dob = "";
+        $doberror = "";
+        $email = "";
+        $emailerror = "";
+        $gender = "";
+        $gendererror = "";
+        $degree = [];
+        $degreeerror = "";
+        $blood_group = "";
+        $bloodgrouperror = "";
+
+        if($_SERVER["REQUEST_METHOD"]=="POST"){
+             if (empty($_POST["name"])) {
+        $nameerror = "Name is required";
+    } else {
+        $name = test_input($_POST["name"]);
+        if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            $nameerror = "Only letters and white space allowed";
+        }
+    }
+
+    if (empty($_POST["email"])) {
+        $emailerror = "Email is required";
+    } else {
+        $email = test_input($_POST["email"]);
+        if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email)) {
+            $emailerror = "Invalid email format";
+        }
+    }
+
+    if (empty($_POST["gender"])) {
+        $gendererror = "Gender is required";
+    } else {
+        $gender = test_input($_POST["gender"]);
+    }
+
+     if (empty($_POST["degree"]) || count($_POST["degree"]) < 2) {
+        $degreeerror = "At least two degrees must be selected";
+    } else {
+        $degree = $_POST["degree"];
+    }
+
+     if (empty($_POST["blood_group"])) {
+        $bloodgrouperror = "Blood group is required";
+    } else {
+        $blood_group = test_input($_POST["blood_group"]);
+    }
+
+
+
+}
+function test_input($data) {
+    $data = trim($data);  
+    return $data;
+}
+?>
+<form method ="post" action="">
+    Name: <input type="text" name="name" value="<?php echo $name; ?>">
+    <?php echo $nameerror; ?><br>
+    DOB: <input type="text" name="dob" value="<?php echo $dob; ?>" placeholder= "DD-MM-YYYY">
+    <?php echo $doberror; ?><br>
+    Email: <input type="text" name="email" value="<?php echo $name; ?>">
+    <?php echo $emailerror; ?><br>
+    Gender: <input type="radio" name="gender" value="Male" <?php if ($gender == "Male") echo "checked"; ?>> Male
+    <input type="radio" name="gender" value="Female" <?php if ($gender == "Female") echo "checked"; ?>> Female
+    <?php echo $gendererror; ?><br>
+    Degree:<input type="checkbox" name="degree[]" value="HSC" <?php if (in_array("HSC", $degree)) echo "checked"; ?>> HSC
+    <input type="checkbox" name="degree[]" value="SSC" <?php if (in_array("SSC", $degree)) echo "checked"; ?>> SSC
+    <input type="checkbox" name="degree[]" value="BSC" <?php if (in_array("BSC", $degree)) echo "checked"; ?>> BSC
+    <input type="checkbox" name="degree[]" value="MSC" <?php if (in_array("MSC", $degree)) echo "checked"; ?>> MSC
+    <?php echo $degreeerror; ?><br>
+    Blood Group: <select name="blood_group">
+        <option value="">Select Blood Group</option>
+        <option value="A+" <?php if ($blood_group == "A+") echo "selected"; ?>>A+</option>
+        <option value="A-" <?php if ($blood_group == "A-") echo "selected"; ?>>A-</option>
+        <option value="B+" <?php if ($blood_group == "B+") echo "selected"; ?>>B+</option>
+        <option value="B-" <?php if ($blood_group == "B-") echo "selected"; ?>>B-</option>
+        <option value="AB+" <?php if ($blood_group == "AB+") echo "selected"; ?>>AB+</option>
+        <option value="AB-" <?php if ($blood_group == "AB-") echo "selected"; ?>>AB-</option>
+        <option value="O+" <?php if ($blood_group == "O+") echo "selected"; ?>>O+</option>
+        <option value="O-" <?php if ($blood_group == "O-") echo "selected"; ?>>O-</option>
+</select>
+<?php echo $bloodgrouperror; ?> <br>
+<input type= "submit" name="submit" value="SUBMIT">
+</form>
+<?php
+if($_SERVER["REQUEST_METHOD"]=="POST" && empty($nameerror) && empty($doberror)&& empty($emailerror) && empty($gendererror) && empty($degreeerror) && empty($bloodgrouperror)){
+    echo "<h3>Your Input:</h3>";
+    echo "Name: " . $name . "<br>";
+    echo "DOB: " . $dob . "<br>";
+    echo "Email: " . $email . "<br>";
+    echo "Gender: " . $gender . "<br>";
+    echo "Degree: " . implode(", ", $degree) . "<br>";
+    echo "Blood Group: " . $blood_group . "<br>";
+}
+?>
+</body>
+</html>
