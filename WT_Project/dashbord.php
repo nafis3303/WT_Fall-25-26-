@@ -12,7 +12,7 @@
         <!-- <a href=" " class="btn">Create Account</a> -->
        
     </div>
-    This is auto
+    This is automated commit test.
 
 </body>
 </html>
