@@ -12,7 +12,7 @@
         <!-- <a href=" " class="btn">Create Account</a> -->
        
     </div>
-    This is auto
+    
 
 </body>
 </html>
