@@ -1,3 +1,16 @@
+<?php
+session_start();
+$servername="localhost";
+$db_username="root";
+$db_password="";
+$dbname="quiz_system";
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 
 <head>
