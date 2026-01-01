@@ -8,6 +8,8 @@
     <div class="register-container">
     <h1>Create Your Account</h1>
 
+    
+
     <div class="form-group">
         Email Address:
         <input type="text" id="email" name="email" placeholder="ex@gmail.com">
