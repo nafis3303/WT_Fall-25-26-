@@ -5,7 +5,8 @@ if (isset($_SESSION['user_id'])) {
     exit();
 }
 ?>
-<link rel="stylesheet" href="style.css ">
+
+<link rel="stylesheet" href="style.css" >
 
 <!DOCTYPE html>
 

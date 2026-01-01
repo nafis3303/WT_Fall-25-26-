@@ -2,7 +2,8 @@
 
 <head>
     <title>Login - Quiz Platform</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body>
