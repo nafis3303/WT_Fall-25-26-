@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 <title>Dashboard</title>
-<link rel="stylesheet" href="style.css">
+<!-- <link rel="stylesheet" href="style.css"> -->
 
 </head>
 <body>
