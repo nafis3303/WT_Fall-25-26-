@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <head>
-<title>Online Quiz System </title>
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-    <h1>Welcome to QuizeMaster</h1>
-    <p>Start creating quizzes, take tests and track performance!</p>
-  
-    <div class="btn-grp">
-        <a href=" " class="btn">Login</a>
-        <a href=" " class="btn">Create Account</a>
-       
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <?php if(role == 'student'): ?>
+
+                <li><a href="dashboard.php">Dashboard</a></li>
+                <li><a href="student/view_quiz.php">Available Quizzes </a></li>
+                <li><a href="student/view_results.php">My results</a></li>
+
+                <?php endif; ?>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+            
+
+        </aside>
     </div>
     
 
