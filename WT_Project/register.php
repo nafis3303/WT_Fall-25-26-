@@ -66,7 +66,7 @@ mysqli_close($conn);
 
 <head>
     <title>Registration</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="css/register.css">
 
 </head>
 
