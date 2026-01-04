@@ -15,7 +15,8 @@ $dbname="quiz_system";
 
 <head>
     <title>Login - Quiz Platform</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="css/login.css">
+
 
 </head>
 
@@ -33,7 +34,7 @@ $dbname="quiz_system";
 
             </div>
             <div class="form-group">
-                <label for="loginPassword">Password</label>
+                
                 Password:
                 <input type="password" id="loginPassword" name="loginPassword" placeholder="Your password"
                     value="<?= isset($_COOKIE['remembered_password']) ? htmlspecialchars($_COOKIE['remembered_password']) : '' ?>"

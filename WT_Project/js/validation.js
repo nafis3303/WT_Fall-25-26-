@@ -59,5 +59,39 @@ function validateEmail(email){
     return regex.test(email);
 }
 
+//login
+function validateLoginForm(){
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value.trim();
+    const errorBox = document.getElementById('loginErrorBox');
+
+    let errorMessage = '';
+
+    if (email === '') {
+        error= 'Email Address is required.';
+    }
+    else if (!validEmail(email)) {
+        error= 'Please enter a valid email address.';
+    }
+    else if (password === '') {
+        error= 'Password is required.';
+
+    }
+    if (error !== '') {
+        errorBox.innerText = error;
+        errorBox.style.display = 'block';
+        return false;
+    }
+    else {
+        errorBox.style.display = 'none';
+        return true;
+
+    }
+
+}
+function validEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
 
 
