@@ -6,7 +6,7 @@ if (isset($_SESSION['user_id'])) {
 }
 ?>
 
-<link rel="stylesheet" href="style.css" >
+<link rel="stylesheet" href="css/style.css" >
 
 <!DOCTYPE html>
 
