@@ -4,7 +4,7 @@ session_start();
 $servername = "localhost";
 $db_username = "root";
 $db_password = "";
-$dbname = "quiz_app"; 
+$dbname = "quizzers"; 
 
 $conn = mysqli_connect($servername, $db_username, $db_password, $dbname);
 
