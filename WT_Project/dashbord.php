@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id']) || !isset($_SESSION['role'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$role = $_SESSION['role'];
+$userId = (int)$_SESSION['user_id'];
+$username = $_SESSION['username'] ?? 'User';
+?>
 <!DOCTYPE html>
 <head>
 <title>Dashboard</title>
