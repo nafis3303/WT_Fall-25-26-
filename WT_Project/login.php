@@ -25,20 +25,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = mysqli_fetch_assoc($result);
             if (password_verify($password, $user['password'])) {
 
-                $_SESSION['user_id'] = $user['id'];
-                $_SESSION['role'] = $user['role'];
-
-
-                if ($rememberMe) {
-                    setcookie("remembered_email", $email, time() + (86400 * 30), "/");
-                    setcookie("remembered_password", $password, time() + (86400 * 30), "/");
+                if ($user['role'] !== 'student') {
+                    $loginError = "Access denied. Only students can log in here.";
                 } else {
-                    setcookie("remembered_email", "", time() - 3600, "/");
-                    setcookie("remembered_password", "", time() - 3600, "/");
+                    $_SESSION['user_id'] = $user['id'];
+                    $_SESSION['role'] = $user['role'];
+
+
+
+
+
+
+                    if ($rememberMe) {
+                        setcookie("remembered_email", $email, time() + (86400 * 30), "/");
+                        setcookie("remembered_password", $password, time() + (86400 * 30), "/");
+                    } else {
+                        setcookie("remembered_email", "", time() - 3600, "/");
+                        setcookie("remembered_password", "", time() - 3600, "/");
+                    }
+
+                    header("Location: dashboard.php");
+                    exit();
                 }
 
-                header("Location: dashboard.php");
-                exit();
             } else {
                 $loginError = "Invalid password.";
             }
@@ -65,7 +74,7 @@ mysqli_close($conn);
     <link rel="stylesheet" href="css/login.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
 
 
 </head>
@@ -74,8 +83,12 @@ mysqli_close($conn);
 <body>
     <div class="login-container">
         <h1>Login to your Account </h1>
+        <?php if (!empty($loginError)): ?>
+            <p style="color:red; text-align:center;"><?= htmlspecialchars($loginError) ?></p>
+        <?php endif; ?>
 
-        <form id="loginForm" action="">
+
+        <form id="loginForm" action="" method="POST" onsubmit="return validateLogin();">
 
             <div class="form-group">
                 <label for="loginEmail">Email Address</label>
@@ -107,22 +120,20 @@ mysqli_close($conn);
 
     </div>
     <script src="js/validation.js"></script>
-<script>
+    <script>
 
-function validateLogin() 
+        function validateLogin() {
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value.trim();
 
-{
-    const email = document.getElementById('loginEmail').value.trim();
-    const password = document.getElementById('loginPassword').value.trim();
+            if (!email || !password) {
+                alert("Please fill  all fields.");
+                return false;
+            }
 
-    if (!email || !password) 
-    {
-        alert("Please fill  all fields.");
-        return false;
-    }
-   
-    return true;
-}
-</script>
+            return true;
+        }
+    </script>
 </body>
+
 </html>
