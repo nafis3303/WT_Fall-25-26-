@@ -60,7 +60,7 @@ if ($username === 'User') {
             <h1>Welcome, <?= htmlspecialchars($username) ?>(Student)</h1>
             <p>Select an option to continue:</p>
             <div class="quick-actions">
-                <a href="student/view_quiz.php" class="quick-btn">Take a Quiz</a>
+                <a href="student/view_quiz.php" class="quick-btn">View Quizes</a>
                 <a href="student/view_results.php" class="quick-btn">View My Results</a>
             </div>
         </main>
