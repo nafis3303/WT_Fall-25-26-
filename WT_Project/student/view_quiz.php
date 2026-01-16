@@ -33,7 +33,7 @@ if ($result) {
 
 <head>
     <title>Available Quizzes - QuizMaster</title>
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 
 </head>
 
