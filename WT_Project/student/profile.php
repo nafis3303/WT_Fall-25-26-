@@ -73,6 +73,7 @@ $avgScoreText = ($avgScore === null) ? "N/A" : number_format((float) $avgScore, 
 
 <head>
     <title>MY Profile</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 
 <body>
@@ -82,10 +83,11 @@ $avgScoreText = ($avgScore === null) ? "N/A" : number_format((float) $avgScore, 
             <div class="sidebar-top">
                 <h2>Menu</h2>
                 <ul>
+                    <li><a href="profile.php">My Profile</a></li>
                     <li><a href="../dashboard.php">Dashboard</a></li>
                     <li><a href="view_quiz.php">View Quizzes</a></li>
                     <li><a href="view_results.php">My Results</a></li>
-                    <li><a href="profile.php">My Profile</a></li>
+                    
                 </ul>
             </div>
 

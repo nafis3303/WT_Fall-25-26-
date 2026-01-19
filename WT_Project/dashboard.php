@@ -47,6 +47,7 @@ if ($username === 'User') {
         <aside class="sidebar">
             <h2>Menu</h2>
             <ul>
+                <li><a href="student/profile.php">My Profile</a></li>
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="student/view_quiz.php">Available Quizzes</a></li>
                 <li><a href="student/view_results.php">My Results</a></li>

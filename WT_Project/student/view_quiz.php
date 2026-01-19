@@ -44,9 +44,10 @@ if ($result) {
             <div class="sidebar-top">
                 <h2>Menu</h2>
                 <ul>
+                    <li><a href="profile.php">My Profile</a></li>
                     <li><a href="../dashboard.php">Dashboard</a></li>
                     <li><a href="view_quiz.php">View Quizzes</a></li>
-                    <li><a href="view_my_results.php">My Results</a></li>
+                    <li><a href="view_results.php">My Results</a></li>
                 </ul>
             </div>
             <div class="sidebar-bottom">
