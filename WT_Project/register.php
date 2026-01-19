@@ -66,7 +66,7 @@ mysqli_close($conn);
         <div class="popup-success">
             <div class="popup-box">
                 <h2><?php echo $successMessage; ?></h2>
-                <p><a href="login.php">Click here to login</a></p>
+                <p><a href="login.php" class="login-link">Click here to login</a></p>
             </div>
         </div>
 
