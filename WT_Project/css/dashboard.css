@@ -132,3 +132,19 @@ h1 {
   flex-wrap: wrap;
   gap: 20px;
 }
+/* student result */
+.quiz-box {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+quiz-box h2 {
+    margin-top: 0;
+}
+.meta{
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
