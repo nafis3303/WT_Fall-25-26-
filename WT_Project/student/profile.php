@@ -70,10 +70,54 @@ $avgScoreText = ($avgScore === null) ? "N/A" : number_format((float) $avgScore, 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>MY Profile</title>
 </head>
+
 <body>
-    
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="../dashboard.php">Dashboard</a></li>
+                    <li><a href="view_quiz.php">View Quizzes</a></li>
+                    <li><a href="view_results.php">My Results</a></li>
+                    <li><a href="profile.php">My Profile</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-bottom">
+                <form action="../logout.php" method="post">
+                    <button type="submit" class="logout-btn">Logout</button>
+                </form>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div class="breadcrumbs">Dashboard > My Profile</div>
+
+            <h1>My Profile</h1>
+
+            <div class="profile-card">
+                <p><strong>Name:</strong> <?= htmlspecialchars($username) ?></p>
+                <p><strong>Email:</strong> <?= htmlspecialchars($email) ?></p>
+                <p><strong>Role:</strong> <?= htmlspecialchars($role) ?></p>
+            </div>
+
+            <h2>Performance Summary</h2>
+
+            <div class="profile-card">
+                <p><strong>Quizzes Attempted:</strong> <?= $attempted ?></p>
+                <p><strong>Average Score:</strong> <?= htmlspecialchars($avgScoreText) ?></p>
+            </div>
+
+            <a href="../dashboard.php" class="back-btn">Back to Dashboard</a>
+        </main>
+
+    </div>
+
 </body>
 </html>
