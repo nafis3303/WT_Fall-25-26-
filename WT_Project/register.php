@@ -92,6 +92,7 @@ mysqli_close($conn);
             <div class="form-group">
                 <label for="email">Email Address:</label>
                 <input type="text" id="email" name="email" placeholder="ex@gmail.com">
+                <small id="emailstatus"></small>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>

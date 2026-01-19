@@ -93,5 +93,33 @@ function validEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
 }
+//AJAX Email Check
+document.getElementById("email").addEventListener("blur", function () {
+    const email = this.value.trim();
+    const statusBox = document.getElementById("emailStatus");
+
+    if (email === "") {
+        statusBox.innerText = "";
+        return;
+    }
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "check_email.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            if (xhr.responseText === "exists") {
+                statusBox.style.color = "red";
+                statusBox.innerText = "Email already exists";
+            } else if (xhr.responseText === "available") {
+                statusBox.style.color = "green";
+                statusBox.innerText = "Email available";
+            }
+        }
+    };
+
+    xhr.send("email=" + encodeURIComponent(email));
+});
 
 
